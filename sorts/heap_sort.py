@@ -54,12 +54,18 @@ def heap_sort(unsorted):
     return unsorted
 
 if __name__ == '__main__':
-    import sys
-    if sys.version_info.major < 3:
-        input_function = raw_input
-    else:
-        input_function = input
-
-    user_input = input_function('Enter numbers separated by a comma:\n')
-    unsorted = [int(item) for item in user_input.split(',')]
-    print(heap_sort(unsorted))
+	import sys
+	import time
+	if sys.version_info.major < 3:
+	    input_function = raw_input
+	else:
+	    input_function = input
+	tstart=time.clock()
+	unsorted=list(range(150000,1,-1))
+	#print(sort(unsorted))
+	print(heap_sort(unsorted))
+	tend=time.clock()
+	print("read: %f s" % (tend - tstart))
+	#user_input = input_function('Enter numbers separated by a comma:\n')
+	#unsorted = [int(item) for item in user_input.split(',')]
+	#print(heap_sort(unsorted))
