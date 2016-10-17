@@ -53,7 +53,7 @@ if __name__ == '__main__':
     unsorted = [int(item) for item in user_input.split(',')]
     '''
     tstart=time.clock()
-    unsorted=list(range(5000,1,-1))
+    unsorted=list(range(10000,1,-1))
     print(bubble_sort(unsorted))
     tend=time.clock()
     print("read: %f s" % (tend - tstart))

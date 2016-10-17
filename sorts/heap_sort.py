@@ -14,7 +14,7 @@ from __future__ import print_function
 
 import pdb
 def heapify(unsorted, index, heap_size):
-		print("in heapify:	", "index=",index,"	list=",unsorted)
+		#print("in heapify:	", "index=",index,"	list=",unsorted)
 		
 		largest = index
 		left_index = 2 * index + 1
@@ -48,7 +48,7 @@ def heap_sort(unsorted):
     >>> heap_sort([-2, -5, -45])
     [-45, -5, -2]
     '''
-    print("in heap_sort:	", "	list=",unsorted)
+    #print("in heap_sort:	", "	list=",unsorted)
     n = len(unsorted)
     for i in range(n // 2 - 1, -1, -1):
         heapify(unsorted, i, n)
@@ -66,12 +66,15 @@ if __name__ == '__main__':
 	else:
 	    input_function = input
 	tstart=time.clock()
-	pdb.set_trace()
-	unsorted=list(range(10,1,-1))
-	#print(sort(unsorted))
-	print(heap_sort(unsorted))
-	tend=time.clock()
-	print("read: %f s" % (tend - tstart))
+	#pdb.set_trace()
+	unsorted=list(range(10000000,1,-1))
+	#print(sort(unsorted))   
+	heap_sort(unsorted)
+	#print(heap_sort(unsorted))
+	tend=time.clock()                 
+	print("read: %f s" % (tend - tstart))                 
 	#user_input = input_function('Enter numbers separated by a comma:\n')
 	#unsorted = [int(item) for item in user_input.split(',')]
 	#print(heap_sort(unsorted))
+                   
+                   
